@@ -31,6 +31,17 @@ const getAnimals = (formData = {}) => {
 
   console.log(queryUrl);
 
+  fetch(queryUrl)
+    .then(response => {
+      if (!response.ok) {
+        return alert('Error: ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(animalData => {
+      console.log(animalData);
+      printResults(animalData);
+    });
 };
 
 const handleGetAnimalsSubmit = event => {
@@ -60,16 +71,6 @@ const handleGetAnimalsSubmit = event => {
   const animalObject = { diet, personalityTraits };
 
   getAnimals(animalObject);
-
-  fetch(queryUrl).then(response => {
-    if (!response.ok) {
-      return alert("Error: " + response.statusText);
-    }
-    return response.json();
-  }).then(animalData => {
-    console.log(animalData);
-    printResults(animalData);
-  })
 };
 
 $animalForm.addEventListener('submit', handleGetAnimalsSubmit);
