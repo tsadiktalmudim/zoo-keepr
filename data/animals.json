@@ -119,6 +119,17 @@
         "hippie"
       ],
       "id": "11"
+    },
+    {
+      "name": "Rufus III",
+      "species": "CHEETAH",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry",
+        "zany",
+        "anxious"
+      ],
+      "id": "12"
     }
   ]
 }
